@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    transition: all 200ms;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #1b1f2f;
+}
+
+.container{
+    width: 90%;
+    max-width: 960px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tittle{
+    width: 60%;
+    background-color: #1b1f2f;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.cadastro{
+    width: 100%;
+    height: 100%;
+    background-color: #1b1f2f;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.cadastro-tittle{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btns{
+    width: 60%;
+    display: flex;
+    justify-content: end;
+}
+
+.btns > button{
+    width: 100px;
+    height: 40px;
+    background-color: #28B869;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.btns > button:hover{
+    background-color: #219a57;
+}
+
+.input-content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.primeiro, .segundo, .terceiro{
+    width: 60%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.primeiro > input, .segundo > input, .terceiro > input{
+    width: 60%;
+    height: 40px;
+    padding: 10px;
+    color: rgb(43, 43, 43);
+    outline: none;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.primeiro > input::placeholder,
+.segundo > input::placeholder,
+.terceiro > input::placeholder{
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.cadastrados{
+    width: 100%;
+    height: 100%;
+    background-color: #1b1f2f;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cadastradosTittle{
+    width: 60%;
+    text-align: left;
+}
+
+.novoCadastro{
+    width: 60%;
+    border-radius: 5px;
+    background-color: #24283b;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.btnsCadastroModal{
+    display: flex;
+    gap: 10px;
+}
+
+.btnAcessar, .btnExcluir{
+    width: 90px;
+    height: 40px;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnAcessar{
+    background-color: #28B869;
+}
+
+.btnExcluir{
+    background-color: #D9534f;
+}
+
+.btnAcessar:hover{
+    background-color: #219a57;
+}
+
+.btnExcluir:hover{
+    background-color: #b43d39;
+}
+
+.novoCadastro > button{
+    width: 100px;
+    height: 40px;
+    background-color: #28B869;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.novoCadastro > button:hover{
+    background-color: rgb(47, 167, 101);
+}
+
+.novoCadastro > .btnExcluir{
+    background-color: rgb(192, 39, 39);
+}
+
+.novoCadastro > .btnExcluir:hover{
+    background-color: rgb(155, 30, 30);
+}
+
+/* Estilo do modal */
+#abrirModal{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(40, 184, 105);
+    border-radius: 5px;
+    border-style: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#fecharModal{
+    padding: 0px 15px;
+    text-align: center;
+    font-size: 3em;
+}
+
+#fecharModal:hover{
+    color: #878787;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes scale {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    border-radius: 5px;
+    background-color: #1b1f2f;
+    margin: 2% auto;
+    padding: 20px 20px;
+    width: 40%;
+    min-width: 550px;
+    position: relative;
+    animation: scale 0.3s ease-in;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modalDados{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.modalDados > input{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    border-style: none;
+    color: #000000;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.clienteModalInput{
+    width: 60%;
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    border-style: none;
+    color: #535353;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.container-nome{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nome, .sobrenome{
+    display: flex;
+    flex-direction: column;
+}
+
+.sobrenome{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.sobrenome > label{
+    width: 100%;
+    text-align: start;
+}
+
+.nome > input,
+.sobrenome > input{
+    width: 100%;
+}
+
+.container-cnpj{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-cnpj > input{
+    width: 100%;
+}
+
+.container-email{
+    width: 100%;
+}
+
+.container-email > input{
+    width: 100%;
+}
+
+.container-numero{
+    width: 100%;
+}
+
+.container-numero > input{
+    width: 100%;
+}
+
+.container-cidade{
+    width: 100%;
+}
+
+.container-cidade > input{
+    width: 100%;
+}
+
+#modalInput6{
+    margin-bottom: 30px;
+}
+
+.btnEditarCadastro{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.btnEditarCadastro > button{
+    width: 100px;
+    height: 40px;
+    background-color: orange;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 12px;
+    cursor: pointer;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.btnEditarCadastro > button:nth-child(1){
+    display: none;
+    width: 100px;
+    height: 40px;
+    background-color: mediumseagreen;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btnAcessar{
+    margin-left: 2%;
+}
+
+.modalInfo {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modalInfo-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.modalInfo-content > h2{
+    color: black;
+    margin-bottom: 20px;
+}
+
+.modalInfo-content > p{
+    color: black;
+    text-align: justify;
+}
+
+strong{
+    color: rgb(0, 0, 0);
+}
+
+#infoDev{
+    width: 100%;
+    text-align: right;
+}
+
+#infoContinue{
+    width: 100%;
+    text-align: right;
+    color: red;
+    font-weight: 700;
+    font-style: italic;
+}
